@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MyStart">
+            <connections>
+                <outlet property="BottomView" destination="OHT-u9-dQv" id="Wqx-Pk-JFY"/>
+                <outlet property="HeadView" destination="BOM-jt-R7z" id="vbc-NU-lO1"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="300" height="400"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
+                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="NLT-PE-eLo">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="BOM-jt-R7z">
+                                <rect key="frame" x="0.0" y="338" width="300" height="62"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1JY-pc-CAX">
+                                        <rect key="frame" x="18" y="15" width="55" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="N95" id="dor-fo-8l5">
+                                            <font key="font" metaFont="system" size="26"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="X7o-cu-Asw"/>
+                                </constraints>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="OHT-u9-dQv">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="62"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bks-K2-BLO">
+                                        <rect key="frame" x="6" y="23" width="184" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="2T5-Gy-JYn"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="未连接" id="S8n-Ui-4kt">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="6O7-bY-bzc">
+                                        <rect key="frame" x="262" y="16" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="YZ0-Ei-bpR"/>
+                                            <constraint firstAttribute="height" constant="30" id="neg-tq-ot8"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="setup" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="gqG-ep-u2C">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="Setup_Clicked:" target="-2" id="2y8-vf-QCf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6O7-bY-bzc" secondAttribute="trailing" constant="8" id="6ed-ha-gOw"/>
+                                    <constraint firstItem="6O7-bY-bzc" firstAttribute="leading" secondItem="Bks-K2-BLO" secondAttribute="trailing" constant="74" id="9Mg-fB-oHf"/>
+                                    <constraint firstItem="Bks-K2-BLO" firstAttribute="leading" secondItem="OHT-u9-dQv" secondAttribute="leading" constant="8" id="L85-KB-Kfk"/>
+                                    <constraint firstAttribute="height" constant="62" id="Rwy-KN-BzG"/>
+                                    <constraint firstItem="6O7-bY-bzc" firstAttribute="centerY" secondItem="OHT-u9-dQv" secondAttribute="centerY" id="rx5-W6-pMZ"/>
+                                    <constraint firstItem="Bks-K2-BLO" firstAttribute="centerY" secondItem="OHT-u9-dQv" secondAttribute="centerY" id="thn-Bc-Yxh"/>
+                                </constraints>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fdf-qH-bXH">
+                                <rect key="frame" x="9" y="307" width="293" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="Nbn-Dc-p5O"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="插入连接器或者通过蓝牙连接" id="VVb-Wd-phz">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XBq-7N-thF">
+                                <rect key="frame" x="94" y="91" width="113" height="181"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="181" id="6xa-P1-1Je"/>
+                                    <constraint firstAttribute="width" constant="113" id="fmy-Dk-nL6"/>
+                                </constraints>
+                                <imageCell key="cell" enabled="NO" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="axesIndependently" image="driver_icon" id="ftl-8A-0ab"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="OHT-u9-dQv" secondAttribute="bottom" id="AIX-li-U9V"/>
+                            <constraint firstItem="XBq-7N-thF" firstAttribute="top" secondItem="Fdf-qH-bXH" secondAttribute="bottom" constant="35" id="C5b-0J-UHd"/>
+                            <constraint firstAttribute="trailing" secondItem="OHT-u9-dQv" secondAttribute="trailing" id="IFM-aT-ULX"/>
+                            <constraint firstItem="XBq-7N-thF" firstAttribute="centerX" secondItem="NLT-PE-eLo" secondAttribute="centerX" id="MMd-7u-ibH"/>
+                            <constraint firstItem="Fdf-qH-bXH" firstAttribute="top" secondItem="BOM-jt-R7z" secondAttribute="bottom" constant="14" id="QOe-ro-IgY"/>
+                            <constraint firstItem="BOM-jt-R7z" firstAttribute="top" secondItem="NLT-PE-eLo" secondAttribute="top" id="STB-LD-Wve"/>
+                            <constraint firstItem="Fdf-qH-bXH" firstAttribute="leading" secondItem="NLT-PE-eLo" secondAttribute="leading" constant="11" id="dzm-H4-VuJ"/>
+                            <constraint firstItem="OHT-u9-dQv" firstAttribute="leading" secondItem="NLT-PE-eLo" secondAttribute="leading" id="fRt-dA-Y2Q"/>
+                            <constraint firstItem="BOM-jt-R7z" firstAttribute="leading" secondItem="NLT-PE-eLo" secondAttribute="leading" id="fl3-9B-XKS"/>
+                            <constraint firstAttribute="trailing" secondItem="Fdf-qH-bXH" secondAttribute="trailing" id="i1y-gN-jBD"/>
+                            <constraint firstAttribute="trailing" secondItem="BOM-jt-R7z" secondAttribute="trailing" id="tHz-6s-Hca"/>
+                        </constraints>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NLT-PE-eLo" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="7lp-Zg-cA4"/>
+                    <constraint firstAttribute="bottom" secondItem="NLT-PE-eLo" secondAttribute="bottom" id="DgR-Qe-bSi"/>
+                    <constraint firstItem="NLT-PE-eLo" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="Jrw-L9-UdV"/>
+                    <constraint firstAttribute="trailing" secondItem="NLT-PE-eLo" secondAttribute="trailing" id="hFA-UN-feE"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="-542" y="-67"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="driver_icon" width="52.5" height="90.5"/>
+        <image name="setup" width="185.25" height="185.25"/>
+    </resources>
+</document>

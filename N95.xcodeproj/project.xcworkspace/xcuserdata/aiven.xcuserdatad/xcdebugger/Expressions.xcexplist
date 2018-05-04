@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "__27-[USBDeviceTool F_SentCmd:]_block_invoke:USBDeviceTool.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "*pdata">
+            </PersistentString>
+            <PersistentString
+               value = "data_to_send[1]">
+            </PersistentString>
+            <PersistentString
+               value = "outBuffer">
+            </PersistentString>
+            <PersistentString
+               value = "reportID">
+            </PersistentString>
+            <PersistentString
+               value = "data_to_send[2]">
+            </PersistentString>
+            <PersistentString
+               value = "data_to_send[0]">
+            </PersistentString>
+            <PersistentString
+               value = "outputBuffer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "theIOHIDReportCallback:USBDeviceTool.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "report[3]">
+            </PersistentString>
+            <PersistentString
+               value = "report[1]">
+            </PersistentString>
+            <PersistentString
+               value = "report[2]">
+            </PersistentString>
+            <PersistentString
+               value = "report[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__24-[MyStart windowDidLoad]_block_invoke:MyStart.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "weakself.device.bFindDevice">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "processHIDs:USBDeviceTool.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "nPordoctID">
+            </PersistentString>
+            <PersistentString
+               value = "nVendorID">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "get_int_property:USBDeviceTool.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "device">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[USBDeviceTool F_SentCmd:]:USBDeviceTool.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MyMainView F_Insert:]:MyMainView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_Normal_SelectView">
+            </PersistentString>
+            <PersistentString
+               value = "_Normal_Timer_View">
+            </PersistentString>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
