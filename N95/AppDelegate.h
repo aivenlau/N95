@@ -7,14 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "USBDeviceTool.h"
+//#import "USBDeviceTool.h"
+#import "HidDevice.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 {
     
 }
 
-@property(strong,nonatomic)USBDeviceTool *device;
+@property(strong,nonatomic)HidDevice *hid_device;
 
 
 @end

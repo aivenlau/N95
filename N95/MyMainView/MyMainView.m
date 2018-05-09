@@ -678,9 +678,11 @@
     [self F_SetMainMenu:self.nMain_Selected];
 }
 - (IBAction)Link_New_Click:(id)sender {
+    /*
     _Linker_View1.hidden = YES;
     _Linker_View2.hidden = NO;
-    USBDeviceTool *hidtool =[USBDeviceTool share];
+    
+    HidDevice *hidtool =[HidDevice shareinstance];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         int ix=0;
         int64_t T1 =  (int64_t)([[NSDate date] timeIntervalSince1970] * 1000);
@@ -706,6 +708,7 @@
         });
         
     });
+     */
 }
 
 

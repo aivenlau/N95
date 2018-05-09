@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "USBDeviceTool.h"
+#import "HidDevice.h"
 @interface MyMainView : NSViewController
 
 @end

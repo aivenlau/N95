@@ -7,7 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "USBDeviceTool.h"
+//#import "USBDeviceTool.h"
+#import "HidDevice.h"
 
 @interface MyStart : NSWindowController
 

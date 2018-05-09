@@ -15,16 +15,16 @@ typedef int (^hidItem)(IOHIDDeviceRef pDeviceRef, unsigned short pVendorID, unsi
 
 
 @interface USBDeviceTool : NSObject
-
-
+{
+    
+}
 
 @property(assign,nonatomic)  BOOL  bFindDevice;
+
 @property(assign,nonatomic)  UInt16  nVendorID;
 @property(assign,nonatomic)  UInt16  nProductID;
 + (USBDeviceTool *)share;
-
 -(int)F_SentCmd:(NSData *)data;
 -(void)F_FindDevice;
 -(int)F_ReadBattery;
-
 @end

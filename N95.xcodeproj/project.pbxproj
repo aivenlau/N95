@@ -38,6 +38,7 @@
 		87931CA31FD4EA3E00A08BFF /* MyLogin_Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 87931CA11FD4EA3D00A08BFF /* MyLogin_Setup.m */; };
 		87931CA41FD4EA3E00A08BFF /* MyLogin_Setup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87931CA21FD4EA3D00A08BFF /* MyLogin_Setup.xib */; };
 		87A2063E209BE1B900D0B2F0 /* libusb-1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A2063D209BE1B900D0B2F0 /* libusb-1.0.0.dylib */; };
+		87F53B6B209D36CA0061DEEA /* HidDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F53B6A209D36CA0061DEEA /* HidDevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,8 @@
 		87931CA21FD4EA3D00A08BFF /* MyLogin_Setup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLogin_Setup.xib; sourceTree = "<group>"; };
 		87A2063D209BE1B900D0B2F0 /* libusb-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libusb-1.0.0.dylib"; sourceTree = "<group>"; };
 		87A2063F209BE28400D0B2F0 /* libusb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libusb.h; sourceTree = "<group>"; };
+		87F53B69209D36CA0061DEEA /* HidDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HidDevice.h; sourceTree = "<group>"; };
+		87F53B6A209D36CA0061DEEA /* HidDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HidDevice.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 			children = (
 				8755B39B20087F730047E99F /* USBDeviceTool.h */,
 				8755B39C20087F730047E99F /* USBDeviceTool.m */,
+				87F53B69209D36CA0061DEEA /* HidDevice.h */,
+				87F53B6A209D36CA0061DEEA /* HidDevice.m */,
 			);
 			path = USBDeviceTool;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				87931C8F1FD4D62700A08BFF /* MyN95.m in Sources */,
 				87931CA31FD4EA3E00A08BFF /* MyLogin_Setup.m in Sources */,
 				8755B39D20087F730047E99F /* USBDeviceTool.m in Sources */,
+				87F53B6B209D36CA0061DEEA /* HidDevice.m in Sources */,
 				87931C801FD4D50900A08BFF /* main.m in Sources */,
 				87931C751FD4D50900A08BFF /* AppDelegate.m in Sources */,
 				870F6F421FE237E000346E16 /* MyMainView.m in Sources */,

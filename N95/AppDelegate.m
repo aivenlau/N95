@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "MyStart.h"
 #import "MyMainView.h"
-
+#import "HidDevice.h"
+#import "USBDeviceTool.h"
 @interface AppDelegate ()
 @property(strong,nonnull) NSStatusItem *statusItem;
 
@@ -24,15 +25,22 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    _device = [USBDeviceTool share];
-    UInt8 readBattery[]={0x81,0x80,0x00,0x04,0x00,0x00,0x00,0x00};
-    //UInt8 readBattery[]={0x81,0x40,0x00,0x01,0x00,0x00,0x00,0x00};
-    //UInt8 readBattery[]={0x81,0x00,0x00,0x00,0x04,0x00,0x00,0x00};
-    NSData *data = [[NSData alloc] initWithBytes:readBattery length:8];
-    [_device F_SentCmd:data];
+    _hid_device = [HidDevice shareinstance];
+    USBDeviceTool *dd = [USBDeviceTool share];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //UInt8 readBattery[]={0x81,0x80,0x00,0x04,0x00,0x00,0x00,0x00};
+        UInt8 readBattery[]={0x81,0x40,0x00,0x01,0x00,0x00,0x00,0x00};
+        //UInt8 readBattery[]={0x81,0x00,0x00,0x00,0x04,0x00,0x00,0x00};
+        NSData *data = [[NSData alloc] initWithBytes:readBattery length:8];
+        //[_hid_device SentCmd:data];
+        [dd F_SentCmd:data];
+    });
+    
     __weak  AppDelegate *weakself = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(100 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
-        if(weakself.device.bFindDevice)
+        
+        if(weakself.hid_device.bHasHid)
         {
             weakself.mainViewController = [[MyMainView alloc] initWithNibName:@"MyMainView" bundle:nil];
             weakself.window = [NSWindow windowWithContentViewController:weakself.mainViewController];

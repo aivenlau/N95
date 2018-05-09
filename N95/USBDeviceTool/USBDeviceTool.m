@@ -381,7 +381,7 @@ void _IOHIDReportCallback (
                                                inputBufferLen, (IOHIDReportCallback)theIOHIDReportCallback, NULL);
         //use this run loop
         IOHIDDeviceScheduleWithRunLoop(mDeviceRef, CFRunLoopGetMain(), kCFRunLoopDefaultMode);
-#define cReportIDPad 0 // first byte is used for report ID
+#define cReportIDPad 1 // first byte is used for report ID
         NSInteger reportSize = data.length-cReportIDPad;
         const UInt8 * pdata = (UInt8 *)[data bytes];
         memcpy(&outBuffer[0], pdata+cReportIDPad, reportSize);
