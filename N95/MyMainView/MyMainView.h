@@ -9,5 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "HidDevice.h"
 @interface MyMainView : NSViewController
-
+{
+    
+}
+-(void)F_DispMainView;
 @end

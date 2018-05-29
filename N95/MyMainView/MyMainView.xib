@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,6 +22,7 @@
                 <outlet property="Button3" destination="Wx4-Zl-x4k" id="aGf-pl-A8F"/>
                 <outlet property="Button4" destination="prq-qf-n3q" id="mQg-Jb-mvY"/>
                 <outlet property="HeadView" destination="8Pe-nx-ycc" id="hAd-px-il6"/>
+                <outlet property="Img_View" destination="W16-9u-5T6" id="cEZ-DW-MjF"/>
                 <outlet property="Line1" destination="bNP-1Y-IBn" id="JTW-OS-KjS"/>
                 <outlet property="Line2" destination="ade-5H-2F8" id="zQ2-qb-VEY"/>
                 <outlet property="Line3" destination="8Gb-W4-kQo" id="kEs-W7-kGd"/>
@@ -60,14 +61,17 @@
                 <outlet property="Timer_Radio4" destination="Am0-iA-a5b" id="y60-4W-OgN"/>
                 <outlet property="Timer_Radio5" destination="hwm-Gi-lVM" id="Kec-u7-RU9"/>
                 <outlet property="Vibration_Slider" destination="hga-xz-9hW" id="U62-r4-4C9"/>
+                <outlet property="View_First" destination="Hz6-mo-xeY" id="JX1-oe-iOo"/>
+                <outlet property="View_Image" destination="nb5-zL-fv7" id="NyH-Cl-ART"/>
                 <outlet property="back_vview" destination="5Yc-OA-nE7" id="IIF-RW-LEh"/>
+                <outlet property="mSlider" destination="5Ad-tk-sSH" id="M1h-5q-cqy"/>
                 <outlet property="tag_imgview_wh_constraint" destination="FLZ-1Q-1ld" id="vTp-Ad-pzV"/>
-                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="view" destination="0Ui-XY-MPs" id="WQi-vw-GvS"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
+        <customView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY" userLabel="View_first">
             <rect key="frame" x="0.0" y="0.0" width="781" height="491"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="8Pe-nx-ycc">
@@ -261,7 +265,7 @@
                 <constraint firstAttribute="trailing" secondItem="RAk-qX-Lzk" secondAttribute="trailing" id="vG9-XV-9ag"/>
                 <constraint firstAttribute="bottom" secondItem="UDg-yZ-ZQh" secondAttribute="bottom" id="voZ-TO-OKt"/>
             </constraints>
-            <point key="canvasLocation" x="29.5" y="-486.5"/>
+            <point key="canvasLocation" x="-904" y="-790"/>
         </customView>
         <customView id="K5y-7o-SCc" userLabel="Normal">
             <rect key="frame" x="0.0" y="0.0" width="781" height="345"/>
@@ -360,7 +364,7 @@
                 <constraint firstItem="7nZ-ui-Mug" firstAttribute="height" secondItem="0z0-6H-TxM" secondAttribute="height" id="yB4-Ao-utH"/>
                 <constraint firstItem="Dgz-g5-Mbv" firstAttribute="centerY" secondItem="K5y-7o-SCc" secondAttribute="centerY" id="zDN-Jw-0dD"/>
             </constraints>
-            <point key="canvasLocation" x="305" y="423"/>
+            <point key="canvasLocation" x="304.5" y="422.5"/>
         </customView>
         <customView id="Mrg-9E-swM" userLabel="Normal_Timer">
             <rect key="frame" x="0.0" y="0.0" width="466" height="324"/>
@@ -1066,7 +1070,7 @@
                 <constraint firstItem="g1F-Cy-Jdg" firstAttribute="height" secondItem="alc-2Y-6eH" secondAttribute="height" id="sun-KS-kt2"/>
                 <constraint firstItem="alc-2Y-6eH" firstAttribute="top" secondItem="KzV-lK-TgO" secondAttribute="top" id="u79-6a-BBU"/>
             </constraints>
-            <point key="canvasLocation" x="-601" y="-193"/>
+            <point key="canvasLocation" x="-415" y="-424"/>
         </customView>
         <customView id="wCh-1M-Cmw" userLabel="Linker_View2">
             <rect key="frame" x="0.0" y="0.0" width="781" height="345"/>
@@ -1218,6 +1222,28 @@
                 <constraint firstItem="fZG-Eg-3fZ" firstAttribute="leading" secondItem="DEJ-JT-8G3" secondAttribute="leading" id="sOA-T4-LEh"/>
             </constraints>
             <point key="canvasLocation" x="-573.5" y="-49.5"/>
+        </customView>
+        <customView id="nb5-zL-fv7" userLabel="ImageView">
+            <rect key="frame" x="0.0" y="0.0" width="710" height="329"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W16-9u-5T6">
+                    <rect key="frame" x="0.0" y="0.0" width="710" height="329"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="qXk-4b-LHA"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="W16-9u-5T6" secondAttribute="trailing" id="9P7-0a-VW2"/>
+                <constraint firstItem="W16-9u-5T6" firstAttribute="leading" secondItem="nb5-zL-fv7" secondAttribute="leading" id="AGB-3I-lsg"/>
+                <constraint firstAttribute="bottom" secondItem="W16-9u-5T6" secondAttribute="bottom" id="Izc-vn-thE"/>
+                <constraint firstItem="W16-9u-5T6" firstAttribute="top" secondItem="nb5-zL-fv7" secondAttribute="top" id="gyR-w4-gmD"/>
+            </constraints>
+            <point key="canvasLocation" x="-1028" y="-35.5"/>
+        </customView>
+        <customView id="0Ui-XY-MPs" userLabel="view">
+            <rect key="frame" x="0.0" y="0.0" width="781" height="491"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <point key="canvasLocation" x="-842.5" y="-527"/>
         </customView>
     </objects>
     <resources>

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		870F6F421FE237E000346E16 /* MyMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 870F6F401FE237E000346E16 /* MyMainView.m */; };
 		870F6F431FE237E000346E16 /* MyMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870F6F411FE237E000346E16 /* MyMainView.xib */; };
-		870F6F501FE2418B00346E16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870F6F4F1FE2418B00346E16 /* Main.storyboard */; };
 		870F6F791FE262E100346E16 /* but_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 870F6F781FE262E100346E16 /* but_background@2x.png */; };
 		870F6F7B1FE266C200346E16 /* but_background_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 870F6F7A1FE266C200346E16 /* but_background_sel@2x.png */; };
 		870F6F7D1FE277CD00346E16 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 870F6F7C1FE277CD00346E16 /* icon.png */; };
@@ -23,7 +22,6 @@
 		8755B3912008597F0047E99F /* link_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 8755B38F2008597F0047E99F /* link_blue.png */; };
 		8755B3922008597F0047E99F /* link_new_device.png in Resources */ = {isa = PBXBuildFile; fileRef = 8755B3902008597F0047E99F /* link_new_device.png */; };
 		8755B394200861E90047E99F /* battery100.png in Resources */ = {isa = PBXBuildFile; fileRef = 8755B393200861E80047E99F /* battery100.png */; };
-		8755B39D20087F730047E99F /* USBDeviceTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8755B39C20087F730047E99F /* USBDeviceTool.m */; };
 		8755B3A02008871A0047E99F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8755B39F2008871A0047E99F /* IOKit.framework */; };
 		8755B3A2200887660047E99F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8755B3A1200887660047E99F /* Foundation.framework */; };
 		875E3ED52007459B00006E81 /* background_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 875E3ED42007459B00006E81 /* background_1@2x.png */; };
@@ -37,7 +35,7 @@
 		87931C981FD4E42E00A08BFF /* driver_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87931C971FD4E42D00A08BFF /* driver_icon@2x.png */; };
 		87931CA31FD4EA3E00A08BFF /* MyLogin_Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 87931CA11FD4EA3D00A08BFF /* MyLogin_Setup.m */; };
 		87931CA41FD4EA3E00A08BFF /* MyLogin_Setup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87931CA21FD4EA3D00A08BFF /* MyLogin_Setup.xib */; };
-		87A2063E209BE1B900D0B2F0 /* libusb-1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A2063D209BE1B900D0B2F0 /* libusb-1.0.0.dylib */; };
+		87B4714120B2682900F1A43D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B4714020B2682900F1A43D /* Main.storyboard */; };
 		87F53B6B209D36CA0061DEEA /* HidDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F53B6A209D36CA0061DEEA /* HidDevice.m */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +43,6 @@
 		870F6F3F1FE237E000346E16 /* MyMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMainView.h; sourceTree = "<group>"; };
 		870F6F401FE237E000346E16 /* MyMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMainView.m; sourceTree = "<group>"; };
 		870F6F411FE237E000346E16 /* MyMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMainView.xib; sourceTree = "<group>"; };
-		870F6F4F1FE2418B00346E16 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		870F6F781FE262E100346E16 /* but_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "but_background@2x.png"; sourceTree = "<group>"; };
 		870F6F7A1FE266C200346E16 /* but_background_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "but_background_sel@2x.png"; sourceTree = "<group>"; };
 		870F6F7C1FE277CD00346E16 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -60,8 +57,6 @@
 		8755B38F2008597F0047E99F /* link_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = link_blue.png; sourceTree = "<group>"; };
 		8755B3902008597F0047E99F /* link_new_device.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = link_new_device.png; sourceTree = "<group>"; };
 		8755B393200861E80047E99F /* battery100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery100.png; sourceTree = "<group>"; };
-		8755B39B20087F730047E99F /* USBDeviceTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBDeviceTool.h; sourceTree = "<group>"; };
-		8755B39C20087F730047E99F /* USBDeviceTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USBDeviceTool.m; sourceTree = "<group>"; };
 		8755B39F2008871A0047E99F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		8755B3A1200887660047E99F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		875E3ED42007459B00006E81 /* background_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_1@2x.png"; sourceTree = "<group>"; };
@@ -81,8 +76,7 @@
 		87931CA01FD4EA3D00A08BFF /* MyLogin_Setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLogin_Setup.h; sourceTree = "<group>"; };
 		87931CA11FD4EA3D00A08BFF /* MyLogin_Setup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLogin_Setup.m; sourceTree = "<group>"; };
 		87931CA21FD4EA3D00A08BFF /* MyLogin_Setup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLogin_Setup.xib; sourceTree = "<group>"; };
-		87A2063D209BE1B900D0B2F0 /* libusb-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libusb-1.0.0.dylib"; sourceTree = "<group>"; };
-		87A2063F209BE28400D0B2F0 /* libusb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libusb.h; sourceTree = "<group>"; };
+		87B4714020B2682900F1A43D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		87F53B69209D36CA0061DEEA /* HidDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HidDevice.h; sourceTree = "<group>"; };
 		87F53B6A209D36CA0061DEEA /* HidDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HidDevice.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A2063E209BE1B900D0B2F0 /* libusb-1.0.0.dylib in Frameworks */,
 				8755B3A2200887660047E99F /* Foundation.framework in Frameworks */,
 				8755B3A02008871A0047E99F /* IOKit.framework in Frameworks */,
 			);
@@ -124,8 +117,6 @@
 		8755B39A20087F730047E99F /* USBDeviceTool */ = {
 			isa = PBXGroup;
 			children = (
-				8755B39B20087F730047E99F /* USBDeviceTool.h */,
-				8755B39C20087F730047E99F /* USBDeviceTool.m */,
 				87F53B69209D36CA0061DEEA /* HidDevice.h */,
 				87F53B6A209D36CA0061DEEA /* HidDevice.m */,
 			);
@@ -161,8 +152,6 @@
 		87931C721FD4D50900A08BFF /* N95 */ = {
 			isa = PBXGroup;
 			children = (
-				87A2063F209BE28400D0B2F0 /* libusb.h */,
-				87A2063D209BE1B900D0B2F0 /* libusb-1.0.0.dylib */,
 				8755B39A20087F730047E99F /* USBDeviceTool */,
 				8755B38420083E900047E99F /* MyStart */,
 				870F6F3E1FE237E000346E16 /* MyMainView */,
@@ -171,8 +160,8 @@
 				87931C911FD4D63300A08BFF /* MyN95 */,
 				87931C731FD4D50900A08BFF /* AppDelegate.h */,
 				87931C741FD4D50900A08BFF /* AppDelegate.m */,
+				87B4714020B2682900F1A43D /* Main.storyboard */,
 				87931C791FD4D50900A08BFF /* Assets.xcassets */,
-				870F6F4F1FE2418B00346E16 /* Main.storyboard */,
 				87931C7E1FD4D50900A08BFF /* Info.plist */,
 				87931C7F1FD4D50900A08BFF /* main.m */,
 				87931C811FD4D50900A08BFF /* N95.entitlements */,
@@ -249,7 +238,7 @@
 		87931C681FD4D50900A08BFF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = AivenLau;
 				TargetAttributes = {
 					87931C6F1FD4D50900A08BFF = {
@@ -281,13 +270,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B4714120B2682900F1A43D /* Main.storyboard in Resources */,
 				875E3ED7200748DD00006E81 /* Tag_Icon@2x.png in Resources */,
 				87931C901FD4D62700A08BFF /* MyN95.xib in Resources */,
 				8755B3912008597F0047E99F /* link_blue.png in Resources */,
 				87931CA41FD4EA3E00A08BFF /* MyLogin_Setup.xib in Resources */,
 				87931C961FD4E1D800A08BFF /* setup@2x.png in Resources */,
 				8755B38320083E8A0047E99F /* MyStart.xib in Resources */,
-				870F6F501FE2418B00346E16 /* Main.storyboard in Resources */,
 				870F6F431FE237E000346E16 /* MyMainView.xib in Resources */,
 				8755B38B20084C3E0047E99F /* menu_icon1_sel.png in Resources */,
 				870F6F7B1FE266C200346E16 /* but_background_sel@2x.png in Resources */,
@@ -314,7 +303,6 @@
 			files = (
 				87931C8F1FD4D62700A08BFF /* MyN95.m in Sources */,
 				87931CA31FD4EA3E00A08BFF /* MyLogin_Setup.m in Sources */,
-				8755B39D20087F730047E99F /* USBDeviceTool.m in Sources */,
 				87F53B6B209D36CA0061DEEA /* HidDevice.m in Sources */,
 				87931C801FD4D50900A08BFF /* main.m in Sources */,
 				87931C751FD4D50900A08BFF /* AppDelegate.m in Sources */,
@@ -340,6 +328,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -347,6 +336,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -395,6 +385,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -402,6 +393,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
