@@ -7,8 +7,13 @@
 //
 
 #import "MyMainView.h"
-
+#import "MyTimerWindowController.h"
 @interface MyMainView ()
+{
+    
+}
+
+@property (strong,nonatomic) MyTimerWindowController *TimerWindowsController;
 @property (strong) IBOutlet NSView *View_First;
 @property (strong) IBOutlet NSView *View_Image;
 
@@ -62,6 +67,7 @@
 
 @property(assign)     int   nMain_Selected;
 @property(assign)     int   nNorMal_Selected;
+@property(assign)     int   nPoint_Selected;
 @property(assign)     int   nTimer_Selected;
 @property(assign)     int   nNext_Selected;
 @property(assign)     int   nPre_Selected;
@@ -105,7 +111,14 @@
 
 @property(assign,nonatomic)  BOOL  bMainViewDisped;
 
+@property (weak) IBOutlet NSButton *Button_Pointer_Fuc1;
+@property (weak) IBOutlet NSButton *Button_Pointer_Fuc2;
+@property (weak) IBOutlet NSButton *Button_Pointer_Fuc3;
 
+//@property (weak) IBOutlet NSTextField *Timer_Cus_TextView;
+@property (weak) IBOutlet NSStepper *TimeStepper;
+@property (weak) IBOutlet NSTextField *TimeStepp_Lable;
+@property(assign)  int   nCurTime;
 
 @end
 
@@ -118,14 +131,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //_Timer_Cus_TextView.hidden = YES;
+    _TimeStepper.hidden = YES;
+    _TimeStepp_Lable.hidden = YES;
     self.bExit =NO;
     _bCanMoved = NO;
     _nImageViewWH = CIR_WIDTH;
     _bDispMain=YES;
     _mSlider.integerValue = 0;
+    _nCurTime = 60;
+    _TimerWindowsController = [[MyTimerWindowController alloc] initWithWindowNibName:@"MyTimerWindowController"];
     
-    //[self.view setWantsLayer:YES];
-    //[self.view.layer setBackgroundColor:[[NSColor colorWithRed:0.0f green:0.0f blue:1.0f alpha:0.0] CGColor]];
+//    [_TimerWindowsController showWindow:nil];
+//    [_TimerWindowsController.window center];
+    
+    //[_TimerWindowsController.window makeKeyWindow];
+    
+    
+    
+    _TimeStepper.wantsLayer = YES;
+    _TimeStepper.layer.backgroundColor = [NSColor clearColor].CGColor;
+    
+    _TimeStepper.minValue = 5;
+    _TimeStepper.maxValue = 200;
+    
+    _TimeStepper.increment = 1; //步增值
+    
+    //_TimeStepper.valueWraps = NO;  //循环，YES - 超过最小值，回到最大值；超过最大值，来到最小值。
+    
+   // _TimeStepper.continuous = NO; //默认为YES-用户交互时会立即放松ValueChanged事件，NO 则表示只有等用户交互结束时才放松ValueChanged事件
+   // _TimeStepper.autorepeat = YES; //默认为 YES-按住加号或
     
     [self.View_Image setWantsLayer:YES];
     [self.View_Image.layer setBackgroundColor:[[NSColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.0] CGColor]];
@@ -140,8 +175,8 @@
     [self.Normal_Timer_View setWantsLayer:YES];
     [self.Normal_Timer_View.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
     
-    [self.Normal_Pointer_View setWantsLayer:YES];
-    [self.Normal_Pointer_View.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
+    //[self.Normal_Pointer_View setWantsLayer:YES];
+    //[self.Normal_Pointer_View.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
     
     [self.Normal_Next_View setWantsLayer:YES];
     [self.Normal_Next_View.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
@@ -279,6 +314,20 @@
     [KNotificationCenter addObserver:self selector:@selector(F_DispMainView) name:@"F_DispMainView" object:nil];
     _bDispMain = YES;
     [self F_SetDispMagnifier:NO];
+}
+-(void)F_ShowTimer:(BOOL)bDisp
+{
+    if(_TimerWindowsController)
+    {
+        if(bDisp)
+        {
+            [_TimerWindowsController showWindow:nil];
+        }
+        else
+        {
+            [_TimerWindowsController close];
+        }
+    }
 }
 
 -(void)F_DispMainView
@@ -554,7 +603,20 @@
             
             weakself.View_Image.hidden = NO;
             weakself.View_First.hidden = YES;
-            NSWindow *win = [[NSApplication sharedApplication].windows lastObject];
+            NSArray *arrayWindow = [NSApplication sharedApplication].windows;
+            NSWindow *win = nil;
+            for(NSWindow *window in arrayWindow)
+            {
+                if([window.contentViewController isKindOfClass:[MyMainView class]])
+                {
+                    win = window;
+                    break;
+                }
+                
+            }
+            //win = [[NSApplication sharedApplication].windows lastObject];
+            
+            
             [win setBackgroundColor:[NSColor clearColor]];//这一步已将window的背景设置为透明了；
             [win setOpaque:NO];
             
@@ -595,7 +657,17 @@
             weakself.View_Image.hidden = YES;
             weakself.View_First.hidden = NO;
             weakself.Img_View.image = nil;
-            NSWindow *win = [[NSApplication sharedApplication].windows lastObject];
+            NSArray *arrayWindow = [NSApplication sharedApplication].windows;
+            NSWindow *win = nil;
+            for(NSWindow *window in arrayWindow)
+            {
+                if([window.contentViewController isKindOfClass:[MyMainView class]])
+                {
+                    win = window;
+                    break;
+                }
+            }
+            //win = [[NSApplication sharedApplication].windows lastObject];
             NSImage *img = weakself.Img_View.image;
             if(img)
             {
@@ -772,6 +844,33 @@
     
     
 }
+- (IBAction)Select_Fuc1_Pointer_Clicked:(id)sender {
+    self.nPoint_Selected = 0;
+    NSColor *color_sel = [NSColor colorWithCalibratedRed:115/255.0f   green:163/255.0f blue:212/255.0f alpha:1.0f];
+    NSColor *color = [NSColor colorWithCalibratedRed:1.0f  green:1.0f blue:1.0f alpha:1.0f];
+    [self F_SetButBackColor:_Button_Pointer_Fuc1 Color:color_sel];
+    [self F_SetButBackColor:_Button_Pointer_Fuc2 Color:color];
+    [self F_SetButBackColor:_Button_Pointer_Fuc3 Color:color];
+    
+    
+}
+- (IBAction)Select_Fuc2_Pointer_Clicked:(id)sender {
+    self.nPoint_Selected = 1;
+    NSColor *color_sel = [NSColor colorWithCalibratedRed:115/255.0f   green:163/255.0f blue:212/255.0f alpha:1.0f];
+    NSColor *color = [NSColor colorWithCalibratedRed:1.0f  green:1.0f blue:1.0f alpha:1.0f];
+    [self F_SetButBackColor:_Button_Pointer_Fuc1 Color:color];
+    [self F_SetButBackColor:_Button_Pointer_Fuc2 Color:color_sel];
+    [self F_SetButBackColor:_Button_Pointer_Fuc3 Color:color];
+}
+- (IBAction)Select_Fuc3_Pointer_Clicked:(id)sender {
+    self.nPoint_Selected = 2;
+    NSColor *color_sel = [NSColor colorWithCalibratedRed:115/255.0f   green:163/255.0f blue:212/255.0f alpha:1.0f];
+    NSColor *color = [NSColor colorWithCalibratedRed:1.0f  green:1.0f blue:1.0f alpha:1.0f];
+    [self F_SetButBackColor:_Button_Pointer_Fuc1 Color:color];
+    [self F_SetButBackColor:_Button_Pointer_Fuc2 Color:color];
+    [self F_SetButBackColor:_Button_Pointer_Fuc3 Color:color_sel];
+    
+}
 
 - (IBAction)Select_Fuc1_Click:(id)sender {
     self.nNorMal_Selected = 1;
@@ -792,7 +891,6 @@
 
 -(void)F_DispTimer_Next_Selected
 {
-    //NSString *spac=@"　";
     NSString *sTitle = @"　　计时器　　　　　　　　　　关闭";
     if(self.nTimer_Selected == 1)
     {
@@ -873,22 +971,56 @@
     if(sender == _Timer_Radio1 )
     {
         self.nTimer_Selected = 0;
+        _TimerWindowsController.nType = 0;
+        //_Timer_Cus_TextView.hidden = YES;
+        _TimeStepper.hidden = YES;
+        _TimeStepp_Lable.hidden = YES;
+        [self F_ShowTimer:NO];
     }
     if(sender == _Timer_Radio2 )
     {
         self.nTimer_Selected = 1;
+        _TimerWindowsController.nType = 0;
+        _TimerWindowsController.nDownTimer=0;
+        _TimerWindowsController.nDownTimer=30*60;
+        _TimerWindowsController.bChanged = YES;
+        _TimeStepper.hidden = YES;
+        _TimeStepp_Lable.hidden = YES;
+        [self F_ShowTimer:YES];
     }
     if(sender == _Timer_Radio3 )
     {
         self.nTimer_Selected = 2;
+        _TimerWindowsController.nDownTimer=30*60;
+        _TimerWindowsController.bChanged = YES;
+        _TimerWindowsController.nType = 1;
+        _TimeStepper.hidden = YES;
+        _TimeStepp_Lable.hidden = YES;
+        [self F_ShowTimer:YES];
     }
     if(sender == _Timer_Radio4 )
     {
         self.nTimer_Selected = 3;
+        _TimerWindowsController.nDownTimer=60*60;
+        _TimerWindowsController.bChanged = YES;
+        _TimerWindowsController.nType = 1;
+        _TimeStepper.hidden = YES;
+        _TimeStepp_Lable.hidden = YES;
+        [self F_ShowTimer:YES];
     }
     if(sender == _Timer_Radio5 )
     {
         self.nTimer_Selected = 4;
+        _TimeStepper.hidden = NO;
+        _TimeStepp_Lable.hidden = NO;
+        _TimeStepp_Lable.stringValue = [NSString stringWithFormat:@"%d",_nCurTime];
+        _TimeStepper.intValue = _nCurTime;
+        _TimerWindowsController.nDownTimer=_nCurTime*60;
+        _TimerWindowsController.bChanged = YES;
+        _TimerWindowsController.nType = 1;
+    
+        
+        [self F_ShowTimer:YES];
     }
     
     if(self.nNorMal_Selected==3)
@@ -984,39 +1116,20 @@
     }
     [self F_SetMainMenu:self.nMain_Selected];
 }
-- (IBAction)Link_New_Click:(id)sender {
-    /*
-     _Linker_View1.hidden = YES;
-     _Linker_View2.hidden = NO;
-     
-     HidDevice *hidtool =[HidDevice shareinstance];
-     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-     int ix=0;
-     int64_t T1 =  (int64_t)([[NSDate date] timeIntervalSince1970] * 1000);
-     while(true)
-     {
-     [hidtool F_FindDevice];
-     usleep(200);
-     if(hidtool.bFindDevice)
-     {
-     break;
-     }
-     int64_t T2 = (int64_t)( [[NSDate date] timeIntervalSince1970] * 1000);
-     if(T2-T1>=1000*10)
-     {
-     break;
-     }
-     
-     
-     }
-     dispatch_async(dispatch_get_main_queue(), ^{
-     _Linker_View1.hidden = NO;
-     _Linker_View2.hidden = YES;
-     });
-     
-     });
-     */
-}
 
+- (IBAction)Link_New_Click:(id)sender
+{
+    
+}
+- (IBAction)TimerStep_Clicked:(id)sender {
+    NSStepper *stepper = (NSStepper *)sender;
+    int theValue = [stepper intValue];
+    _TimeStepp_Lable.stringValue = [NSString stringWithFormat:@"%d",theValue];
+    
+    _TimerWindowsController.nDownTimer=theValue*60;
+    _TimerWindowsController.bChanged = YES;
+    _TimerWindowsController.nType = 1;
+    NSLog(@"get da=%d",theValue);
+}
 
 @end

@@ -35,6 +35,8 @@
 		87931C981FD4E42E00A08BFF /* driver_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87931C971FD4E42D00A08BFF /* driver_icon@2x.png */; };
 		87931CA31FD4EA3E00A08BFF /* MyLogin_Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 87931CA11FD4EA3D00A08BFF /* MyLogin_Setup.m */; };
 		87931CA41FD4EA3E00A08BFF /* MyLogin_Setup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87931CA21FD4EA3D00A08BFF /* MyLogin_Setup.xib */; };
+		87B075EF20D38EFA0080FE1F /* MyTimerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B075ED20D38EFA0080FE1F /* MyTimerWindowController.m */; };
+		87B075F020D38EFA0080FE1F /* MyTimerWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87B075EE20D38EFA0080FE1F /* MyTimerWindowController.xib */; };
 		87B4714120B2682900F1A43D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B4714020B2682900F1A43D /* Main.storyboard */; };
 		87F53B6B209D36CA0061DEEA /* HidDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F53B6A209D36CA0061DEEA /* HidDevice.m */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,9 @@
 		87931CA01FD4EA3D00A08BFF /* MyLogin_Setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLogin_Setup.h; sourceTree = "<group>"; };
 		87931CA11FD4EA3D00A08BFF /* MyLogin_Setup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLogin_Setup.m; sourceTree = "<group>"; };
 		87931CA21FD4EA3D00A08BFF /* MyLogin_Setup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLogin_Setup.xib; sourceTree = "<group>"; };
+		87B075EC20D38EFA0080FE1F /* MyTimerWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTimerWindowController.h; sourceTree = "<group>"; };
+		87B075ED20D38EFA0080FE1F /* MyTimerWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTimerWindowController.m; sourceTree = "<group>"; };
+		87B075EE20D38EFA0080FE1F /* MyTimerWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTimerWindowController.xib; sourceTree = "<group>"; };
 		87B4714020B2682900F1A43D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		87F53B69209D36CA0061DEEA /* HidDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HidDevice.h; sourceTree = "<group>"; };
 		87F53B6A209D36CA0061DEEA /* HidDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HidDevice.m; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 		87931C721FD4D50900A08BFF /* N95 */ = {
 			isa = PBXGroup;
 			children = (
+				87B075EB20D38EAD0080FE1F /* New Group1 */,
 				8755B39A20087F730047E99F /* USBDeviceTool */,
 				8755B38420083E900047E99F /* MyStart */,
 				870F6F3E1FE237E000346E16 /* MyMainView */,
@@ -210,6 +216,16 @@
 				87931CA21FD4EA3D00A08BFF /* MyLogin_Setup.xib */,
 			);
 			path = MyLogin_Setup;
+			sourceTree = "<group>";
+		};
+		87B075EB20D38EAD0080FE1F /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+				87B075EC20D38EFA0080FE1F /* MyTimerWindowController.h */,
+				87B075ED20D38EFA0080FE1F /* MyTimerWindowController.m */,
+				87B075EE20D38EFA0080FE1F /* MyTimerWindowController.xib */,
+			);
+			path = "New Group1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +299,7 @@
 				87931C981FD4E42E00A08BFF /* driver_icon@2x.png in Resources */,
 				870F6F791FE262E100346E16 /* but_background@2x.png in Resources */,
 				875E3ED52007459B00006E81 /* background_1@2x.png in Resources */,
+				87B075F020D38EFA0080FE1F /* MyTimerWindowController.xib in Resources */,
 				8755B394200861E90047E99F /* battery100.png in Resources */,
 				8755B38E20084C3E0047E99F /* menu_icon5.png in Resources */,
 				8755B38A20084C3E0047E99F /* menu_icon2.png in Resources */,
@@ -308,6 +325,7 @@
 				87931C751FD4D50900A08BFF /* AppDelegate.m in Sources */,
 				870F6F421FE237E000346E16 /* MyMainView.m in Sources */,
 				8755B38220083E8A0047E99F /* MyStart.m in Sources */,
+				87B075EF20D38EFA0080FE1F /* MyTimerWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
