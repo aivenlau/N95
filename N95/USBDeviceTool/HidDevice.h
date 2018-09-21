@@ -26,6 +26,7 @@ typedef int (^hidItem)(IOHIDDeviceRef pDeviceRef, UInt16 pVendorID, UInt16 pProd
 
 +(instancetype)shareinstance;
 -(int)SentCmd:(NSData *)data;
+-(void)disConnectDevice;
 
 
 

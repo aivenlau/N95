@@ -97,6 +97,7 @@ void Handle_DeviceMatchingCallback(void *inContext,IOReturn inResult,void *inSen
         //IOHIDDeviceRegisterInputValueCallback([HidDevice shareinstance].deviceRef, Handle_valueData, (void *)[HidDevice shareinstance]);
         //IOHIDDeviceInterface
          Byte buff[]={0x81,0x00,0x00,0x00,0x04,0x00,0x00,0x01};
+        //Byte buff[]={0x81,0x80,0x00,0x08,0x00,0x00,0x00,0x00};
         NSData *data = [[NSData alloc] initWithBytes:buff length:8];
         [[HidDevice shareinstance] SentCmd:data];
     }
@@ -106,6 +107,7 @@ void Handle_DeviceRemovalCallback(void *inContext,IOReturn inResult,void *inSend
     BOOL re =[ [HidDevice shareinstance] isMatchHid:inIOHIDDeviceRef];
     if(re)
     {
+        [[HidDevice shareinstance] disConnectDevice];
         [HidDevice shareinstance].deviceRef =nil;
         [HidDevice shareinstance].bHasHid = NO;
         NSLog(@"Removed!");
@@ -161,12 +163,14 @@ static unsigned short get_product_id(IOHIDDeviceRef device)
 #define KNotificationCenter [NSNotificationCenter defaultCenter]
 
 @implementation HidDevice
+
 //重写allocWithZone:方法，在这里创建唯一的实例(注意线程安全)
 + (instancetype)allocWithZone:(struct _NSZone *)zone
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        if (_instance == nil) {
+        if (_instance == nil)
+        {
             _instance = [super allocWithZone:zone];
             [_instance inia];
         }
@@ -175,8 +179,29 @@ static unsigned short get_product_id(IOHIDDeviceRef device)
     
 }
 
+// 为了严谨，也要重写copyWithZone 和 mutableCopyWithZone
+-(id)copyWithZone:(NSZone *)zone
+{
+    return _instance;
+}
+-(id)mutableCopyWithZone:(NSZone *)zone
+{
+    return _instance;
+}
 
--(void)F_SetartCheck
+// 为了使实例易于外界访问 我们一般提供一个类方法
+// 类方法命名规范 share类名|default类名|类名
+
++(instancetype)shareinstance
+{
+    //return _instance;
+    return [[self alloc] init];
+}
+
+
+
+
+-(void)F_StartCheck
 {
     __weak HidDevice *weakself = self;
     __block int nT=0;
@@ -274,7 +299,7 @@ CFMutableDictionaryRef myCreateDeviceMatchingDictionary(UInt32 usagePage,  UInt3
     IOHIDManagerRegisterDeviceRemovalCallback(self.managerRef, &Handle_DeviceRemovalCallback, NULL);
     IOHIDManagerSetDeviceMatching(self.managerRef, NULL);
     
-    [self F_SetartCheck];
+    [self F_StartCheck];
 }
 
 -(void)dealloc
@@ -284,23 +309,6 @@ CFMutableDictionaryRef myCreateDeviceMatchingDictionary(UInt32 usagePage,  UInt3
         free(_inputbuffer);
         _inputbuffer = NULL;
     }
-}
-
-// 为了严谨，也要重写copyWithZone 和 mutableCopyWithZone
--(id)copyWithZone:(NSZone *)zone
-{
-    return _instance;
-}
--(id)mutableCopyWithZone:(NSZone *)zone
-{
-    return _instance;
-}
-// 为了使实例易于外界访问 我们一般提供一个类方法
-// 类方法命名规范 share类名|default类名|类名
-+(instancetype)shareinstance
-{
-    //return _instance;
-    return [[self alloc]init];
 }
 
 
@@ -319,16 +327,11 @@ CFMutableDictionaryRef myCreateDeviceMatchingDictionary(UInt32 usagePage,  UInt3
     if (!_deviceRef) {
         return;
     }
-    
-    
     if ([[HidDevice shareinstance] isMatchHid:_deviceRef])
     {
-        
-        //[self exitOutUSBState];
         IOReturn ret = IOHIDDeviceClose(_deviceRef, 0L);
         if (ret == kIOReturnSuccess) {
-            //_deviceRef = nil;
-            //[[USBDeviceTool share].delegate robotPenUSBRomveDevice];
+            ;
         }
     }
     return;
@@ -344,13 +347,13 @@ CFMutableDictionaryRef myCreateDeviceMatchingDictionary(UInt32 usagePage,  UInt3
         }
         //IOHIDDeviceRegisterInputReportCallback(_deviceRef, (uint8_t*)inputbuffer, 64, Handle_DeviceOutgoingData, (void *)self);
         //IOHIDDeviceScheduleWithRunLoop(_deviceRef, CFRunLoopGetMain(), kCFRunLoopDefaultMode);
-        
+        /*
          const unsigned short cOutputReportSize = get_int_property(_deviceRef, CFSTR(kIOHIDMaxOutputReportSizeKey));
          const unsigned short cFeatyreReportSize = get_int_property(_deviceRef, CFSTR(kIOHIDMaxFeatureReportSizeKey));
          const unsigned short cInputReportSize = get_int_property(_deviceRef, CFSTR(kIOHIDMaxInputReportSizeKey));
-        
+        */
         uint8_t outBuffer[20];
-        
+        memset(outBuffer, 0, 20);
         NSInteger reportSize = data.length;
         if(reportSize>20)
         {
@@ -365,12 +368,10 @@ CFMutableDictionaryRef myCreateDeviceMatchingDictionary(UInt32 usagePage,  UInt3
         if (ret == kIOReturnSuccess )
         {
             usleep(1000*200);
+            return 0;
         }
-       // IOReturn dd = kIOReturnNotFound;
-       // ret = IOHIDDeviceClose(_deviceRef, kIOHIDOptionsTypeNone);
-        //_deviceRef = nil;
     }
-    return -10;
+    return -1;
 }
 
 

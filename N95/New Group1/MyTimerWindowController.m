@@ -92,14 +92,13 @@
                         if(N2>=1)
                         {
                             weakself.nDownTimer-=(int)N2;
-                            
                         }
                     }
                     N1 =(int64_t)[[NSDate date] timeIntervalSince1970];
                 }
                 else if(weakself.nType ==2)
                 {
-                    
+                    ;
                 }
             }
             ad++;

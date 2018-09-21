@@ -28,6 +28,21 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     _hid_device = [HidDevice shareinstance];
+ 
+    
+    NSUserDefaults* defs = [NSUserDefaults standardUserDefaults];
+    NSArray* languages = [defs objectForKey:@"AppleLanguages"];
+    NSString* language = [[languages objectAtIndex:0] uppercaseString];
+    
+    //"zh-Hant-CN",
+    //"zh-Hans-CN",
+    
+    //NSString * localeString = [[NSLocale currentLocale] localeIdentifier];
+    //NSString * language = [[[localeString componentsSeparatedByString:@"_"] objectAtIndex:0] uppercaseString];
+    
+    NSLog(@"%@",languages);
+    NSLog(@"%@",language);
+    
     
 
     _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
