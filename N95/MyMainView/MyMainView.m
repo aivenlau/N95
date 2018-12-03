@@ -8,6 +8,7 @@
 
 #import "MyMainView.h"
 #import "MyTimerWindowController.h"
+#import "../MyButton/MyButton.h"
 @interface MyMainView ()
 {
     
@@ -33,10 +34,10 @@
 @property (weak) IBOutlet NSSlider *mSlider;
 
 
-@property (weak) IBOutlet NSButton *Button1;
-@property (weak) IBOutlet NSButton *Button2;
-@property (weak) IBOutlet NSButton *Button3;
-@property (weak) IBOutlet NSButton *Button4;
+@property (weak) IBOutlet MyButton *Button1;
+@property (weak) IBOutlet MyButton *Button2;
+@property (weak) IBOutlet MyButton *Button3;
+@property (weak) IBOutlet MyButton *Button4;
 @property (weak) IBOutlet NSView *HeadView;
 @property (weak) IBOutlet NSView *BottomView;
 @property (weak) IBOutlet NSView *MyView;
@@ -119,6 +120,9 @@
 @property (weak) IBOutlet NSStepper *TimeStepper;
 @property (weak) IBOutlet NSTextField *TimeStepp_Lable;
 @property(assign)  int   nCurTime;
+
+@property (weak) IBOutlet NSTextField *BatteryTextField;
+
 
 @end
 
@@ -892,77 +896,131 @@
 -(void)F_DispTimer_Next_Selected
 {
     NSString *sTitle = @"　　计时器　　　　　　　　　　关闭";
+    NSString *string1=@"计时器";
+    NSString *string2=@"关闭";
+    
+    
+    
+    
     if(self.nTimer_Selected == 1)
     {
         
-        sTitle = @"　　定时器　　　　　　　　显示时针";
+        //sTitle = @"　　定时器　　　　　　　　显示时针";
+        string1=@"计时器";
+        string2=@"显示时针";
     }
     if(self.nTimer_Selected == 2)
     {
-        sTitle = @"　　定时器　　　　　　　　　30分钟";
+        //sTitle = @"　　定时器　　　　　　　　　30分钟";
+        string1=@"计时器";
+        string2=@"30分钟";
     }
     if(self.nTimer_Selected == 3)
     {
-        sTitle = @"　　定时器　　　　　　　　　60分钟";
+        //sTitle = @"　　定时器　　　　　　　　　60分钟";
+        string1=@"计时器";
+        string2=@"60分钟";
     }
     if(self.nTimer_Selected == 4)
     {
-        sTitle = @"　　定时器　　　　　　　　　自定义";
+        //sTitle = @"　　定时器　　　　　　　　　自定义";
+        string1=@"计时器";
+        string2=@"自定义";
     }
-    self.Button1.title = sTitle;
+    self.Button1.title=@"";
+    self.Button2.title=@"";
+    self.Button3.title=@"";
+    self.Button4.title=@"";
+    //self.Button1.title = sTitle;
+    self.Button1.title1.stringValue=string1;
+    self.Button1.title2.stringValue=string2;
+    
+    
+    string1=@"指针";
+    string2=@"";
+    
+    self.Button2.title1.stringValue=string1;
+    self.Button2.title2.stringValue=string2;
     
     sTitle =@"　　长按下一页按钮　　　　　无操作";
+    string1=@"长按下一页按钮";
+    string2=@"无操作";
     if(self.nNext_Selected == 1)
     {
-        
-        
-        sTitle =@"　　长按下一页按钮　　　　　　快进";
+        //sTitle =@"　　长按下一页按钮　　　　　　快进";
+        string1=@"长按下一页按钮";
+        string2=@"快进";
         
     }
     if(self.nNext_Selected == 2)
     {
-        sTitle =@"　　长按下一页按钮　　　　　　滚动";
+        //sTitle =@"　　长按下一页按钮　　　　　　滚动";
+        string1=@"长按下一页按钮";
+        string2=@"滚动";
     }
     if(self.nNext_Selected == 3)
     {
-        sTitle =@"　　长按下一页按钮　　　　空白屏幕";
+        //sTitle =@"　　长按下一页按钮　　　　空白屏幕";
+        string1=@"长按下一页按钮";
+        string2=@"空白屏幕";
     }
     if(self.nNext_Selected == 4)
     {
-        sTitle =@"　　长按下一页按钮　　　　音量控制";
+        //sTitle =@"　　长按下一页按钮　　　　音量控制";
+        string1=@"长按下一页按钮";
+        string2=@"音量控制";
     }
     if(self.nNext_Selected == 5)
     {
-        sTitle =@"　　长按下一页按钮　　　自定义按键";
+        //sTitle =@"　　长按下一页按钮　　　自定义按键";
+        string1=@"长按下一页按钮";
+        string2=@"自定义按键";
     }
-    self.Button3.title = sTitle;
+    //self.Button3.title = sTitle;
+    
+    self.Button3.title1.stringValue=string1;
+    self.Button3.title2.stringValue=string2;
     
     
     sTitle =@"　　长按上一页按钮　　　　　无操作";
+    string1=@"长按上一页按钮";
+    string2=@"无操作";
     if(self.nPre_Selected == 1)
     {
         
         
-        sTitle =@"　　长按上一页按钮　　　　　　快退";
+        //sTitle =@"　　长按上一页按钮　　　　　　快退";
+        string1=@"长按上一页按钮";
+        string2=@"快退";
         
     }
     if(self.nPre_Selected == 2)
     {
-        sTitle =@"　　长按上一页按钮　　　　　　滚动";
+        //sTitle =@"　　长按上一页按钮　　　　　　滚动";
+        string1=@"长按上一页按钮";
+        string2=@"滚动";
     }
     if(self.nPre_Selected == 3)
     {
-        sTitle =@"　　长按上一页按钮　　　　空白屏幕";
+        //sTitle =@"　　长按上一页按钮　　　　空白屏幕";
+        string1=@"长按上一页按钮";
+        string2=@"空白屏幕";
     }
     if(self.nPre_Selected == 4)
     {
-        sTitle =@"　　长按上一页按钮　　　　音量控制";
+        //sTitle =@"　　长按上一页按钮　　　　音量控制";
+        string1=@"长按上一页按钮";
+        string2=@"音量控制";
     }
     if(self.nPre_Selected == 5)
     {
-        sTitle =@"　　长按上一页按钮　　　自定义按键";
+        //sTitle =@"　　长按上一页按钮　　　自定义按键";
+        string1=@"长按上一页按钮";
+        string2=@"自定义按键";
     }
-    self.Button4.title = sTitle;
+    //self.Button4.title = sTitle;
+    self.Button4.title1.stringValue=string1;
+    self.Button4.title2.stringValue=string2;
     
 }
 

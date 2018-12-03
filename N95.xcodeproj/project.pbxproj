@@ -39,6 +39,7 @@
 		87B075F020D38EFA0080FE1F /* MyTimerWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87B075EE20D38EFA0080FE1F /* MyTimerWindowController.xib */; };
 		87B4714120B2682900F1A43D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B4714020B2682900F1A43D /* Main.storyboard */; };
 		87F53B6B209D36CA0061DEEA /* HidDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F53B6A209D36CA0061DEEA /* HidDevice.m */; };
+		87F7F2AC218687C70071D140 /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F7F2AB218687C70071D140 /* MyButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,8 @@
 		87B4714020B2682900F1A43D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		87F53B69209D36CA0061DEEA /* HidDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HidDevice.h; sourceTree = "<group>"; };
 		87F53B6A209D36CA0061DEEA /* HidDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HidDevice.m; sourceTree = "<group>"; };
+		87F7F2AA218687C70071D140 /* MyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
+		87F7F2AB218687C70071D140 /* MyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,7 @@
 		87931C721FD4D50900A08BFF /* N95 */ = {
 			isa = PBXGroup;
 			children = (
+				87F7F2A9218687950071D140 /* MyButton */,
 				87B075EB20D38EAD0080FE1F /* New Group1 */,
 				8755B39A20087F730047E99F /* USBDeviceTool */,
 				8755B38420083E900047E99F /* MyStart */,
@@ -226,6 +230,15 @@
 				87B075EE20D38EFA0080FE1F /* MyTimerWindowController.xib */,
 			);
 			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		87F7F2A9218687950071D140 /* MyButton */ = {
+			isa = PBXGroup;
+			children = (
+				87F7F2AA218687C70071D140 /* MyButton.h */,
+				87F7F2AB218687C70071D140 /* MyButton.m */,
+			);
+			path = MyButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F7F2AC218687C70071D140 /* MyButton.m in Sources */,
 				87931C8F1FD4D62700A08BFF /* MyN95.m in Sources */,
 				87931CA31FD4EA3E00A08BFF /* MyLogin_Setup.m in Sources */,
 				87F53B6B209D36CA0061DEEA /* HidDevice.m in Sources */,

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,11 +14,12 @@
                 <outlet property="Alarm_Line1_View" destination="u0s-zm-kdX" id="El7-Tb-bph"/>
                 <outlet property="Alarm_Line2_View" destination="bVU-HB-OR0" id="m62-TT-a5z"/>
                 <outlet property="Alarm_Line3_View" destination="yoh-KI-4px" id="NeP-YG-gLE"/>
+                <outlet property="BatteryTextField" destination="lGq-xs-Ncw" id="zwQ-ci-26H"/>
                 <outlet property="BottomView" destination="UDg-yZ-ZQh" id="ptb-yU-lRn"/>
-                <outlet property="Button1" destination="jWl-oT-6YH" id="fpC-kw-c75"/>
-                <outlet property="Button2" destination="Q4k-Rl-SZd" id="6dJ-7g-XZL"/>
-                <outlet property="Button3" destination="Wx4-Zl-x4k" id="aGf-pl-A8F"/>
-                <outlet property="Button4" destination="prq-qf-n3q" id="mQg-Jb-mvY"/>
+                <outlet property="Button1" destination="jWl-oT-6YH" id="RsU-J5-mAw"/>
+                <outlet property="Button2" destination="Q4k-Rl-SZd" id="p1b-Or-9Ht"/>
+                <outlet property="Button3" destination="Wx4-Zl-x4k" id="gK1-DM-nTC"/>
+                <outlet property="Button4" destination="prq-qf-n3q" id="GCi-EA-SYK"/>
                 <outlet property="Button_Pointer_Fuc1" destination="fKX-T7-bSN" id="mie-92-vi9"/>
                 <outlet property="Button_Pointer_Fuc2" destination="IR2-iR-PVq" id="7Yt-Gj-64s"/>
                 <outlet property="Button_Pointer_Fuc3" destination="0PG-h2-9G6" id="r97-ee-YOh"/>
@@ -120,7 +119,7 @@
                             </connections>
                         </button>
                         <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s2S-yY-xkA">
-                            <rect key="frame" x="312" y="0.0" width="156" height="38"/>
+                            <rect key="frame" x="312" y="0.0" width="157" height="38"/>
                             <buttonCell key="cell" type="square" title="警告" bezelStyle="shadowlessSquare" image="menu_icon3" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="MuY-7M-sWB">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
@@ -130,7 +129,7 @@
                             </connections>
                         </button>
                         <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UCG-Vj-edi">
-                            <rect key="frame" x="468" y="0.0" width="156" height="38"/>
+                            <rect key="frame" x="469" y="0.0" width="156" height="38"/>
                             <buttonCell key="cell" type="square" title="连接" bezelStyle="shadowlessSquare" image="menu_icon4" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="6g9-de-j0Q">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
@@ -140,7 +139,7 @@
                             </connections>
                         </button>
                         <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ve-1P-MRf">
-                            <rect key="frame" x="624" y="0.0" width="156" height="38"/>
+                            <rect key="frame" x="625" y="0.0" width="156" height="38"/>
                             <buttonCell key="cell" type="square" title="关于" bezelStyle="shadowlessSquare" image="menu_icon5" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="JGa-mb-Zux">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
@@ -185,13 +184,13 @@
                             <rect key="frame" x="156" y="0.0" width="156" height="2"/>
                         </customView>
                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="8Gb-W4-kQo" userLabel="Line3">
-                            <rect key="frame" x="312" y="0.0" width="156" height="2"/>
+                            <rect key="frame" x="312" y="0.0" width="157" height="2"/>
                         </customView>
                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="oVN-g4-bxl" userLabel="Line4">
-                            <rect key="frame" x="468" y="0.0" width="156" height="2"/>
+                            <rect key="frame" x="469" y="0.0" width="156" height="2"/>
                         </customView>
                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="nH8-1s-tN4" userLabel="Line5">
-                            <rect key="frame" x="624" y="0.0" width="156" height="2"/>
+                            <rect key="frame" x="625" y="0.0" width="156" height="2"/>
                         </customView>
                     </subviews>
                     <constraints>
@@ -230,7 +229,7 @@
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGq-xs-Ncw">
                             <rect key="frame" x="65" y="8" width="47" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="100%" id="0BV-zQ-XDH">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="65%" id="0BV-zQ-XDH">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -276,7 +275,7 @@
             <rect key="frame" x="0.0" y="0.0" width="781" height="345"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jWl-oT-6YH">
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jWl-oT-6YH" customClass="MyButton">
                     <rect key="frame" x="17" y="278" width="268" height="55"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="55" id="MJW-Pc-Vj6"/>
@@ -296,7 +295,7 @@
                         <constraint firstAttribute="height" constant="1" id="9vm-cb-riK"/>
                     </constraints>
                 </box>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q4k-Rl-SZd">
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q4k-Rl-SZd" customClass="MyButton">
                     <rect key="frame" x="17" y="222" width="268" height="55"/>
                     <buttonCell key="cell" type="square" title="　　指针　　　　　　　　　　　多个" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="axesIndependently" inset="2" id="OAc-A9-nF9">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -309,7 +308,7 @@
                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="7nZ-ui-Mug" userLabel="Horizontal Line2">
                     <rect key="frame" x="17" y="219" width="268" height="5"/>
                 </box>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wx4-Zl-x4k">
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wx4-Zl-x4k" customClass="MyButton">
                     <rect key="frame" x="17" y="166" width="268" height="55"/>
                     <buttonCell key="cell" type="square" title="      长按下一页按钮　　           音量控制" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="axesIndependently" inset="2" id="K2y-wH-pd4">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -322,7 +321,7 @@
                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="9LS-Mu-eQn" userLabel="Horizontal Line3">
                     <rect key="frame" x="17" y="163" width="268" height="5"/>
                 </box>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="prq-qf-n3q">
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="prq-qf-n3q" customClass="MyButton">
                     <rect key="frame" x="17" y="110" width="268" height="55"/>
                     <buttonCell key="cell" type="square" title="      长按上一页按钮　　           空白屏幕" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="axesIndependently" inset="2" id="5Lf-0E-GuZ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -333,7 +332,7 @@
                     </connections>
                 </button>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Dgz-g5-Mbv">
-                    <rect key="frame" x="305" y="10" width="466" height="324"/>
+                    <rect key="frame" x="305" y="11" width="466" height="324"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="466" id="FNM-5P-cwd"/>
                         <constraint firstAttribute="height" constant="324" id="Rsu-rg-ohq"/>
@@ -369,7 +368,7 @@
                 <constraint firstItem="7nZ-ui-Mug" firstAttribute="height" secondItem="0z0-6H-TxM" secondAttribute="height" id="yB4-Ao-utH"/>
                 <constraint firstItem="Dgz-g5-Mbv" firstAttribute="centerY" secondItem="K5y-7o-SCc" secondAttribute="centerY" id="zDN-Jw-0dD"/>
             </constraints>
-            <point key="canvasLocation" x="343" y="140"/>
+            <point key="canvasLocation" x="342.5" y="139.5"/>
         </customView>
         <customView id="Mrg-9E-swM" userLabel="Normal_Timer">
             <rect key="frame" x="0.0" y="0.0" width="466" height="324"/>
@@ -486,7 +485,7 @@
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vxZ-eG-UuH">
                     <rect key="frame" x="143" y="12" width="19" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <stepperCell key="cell" alignment="left" maxValue="100" valueWraps="YES" id="Snf-L1-gaW"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" valueWraps="YES" id="Snf-L1-gaW"/>
                     <connections>
                         <action selector="TimerStep_Clicked:" target="-2" id="t2X-G6-CRa"/>
                     </connections>
@@ -868,9 +867,9 @@
                             </textFieldCell>
                         </textField>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lrI-XT-nnL">
-                            <rect key="frame" x="686" y="5" width="81" height="32"/>
+                            <rect key="frame" x="693" y="5" width="67" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xSG-lQ-GRk">
+                            <buttonCell key="cell" type="push" title="确定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xSG-lQ-GRk">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -939,9 +938,9 @@
                             </textFieldCell>
                         </textField>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJe-qR-Zim">
-                            <rect key="frame" x="686" y="5" width="81" height="32"/>
+                            <rect key="frame" x="693" y="5" width="67" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eQs-uT-MT7">
+                            <buttonCell key="cell" type="push" title="确定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eQs-uT-MT7">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -964,9 +963,9 @@
                             </textFieldCell>
                         </textField>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3W-E3-zM5">
-                            <rect key="frame" x="686" y="7" width="81" height="32"/>
+                            <rect key="frame" x="693" y="7" width="67" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="m6W-Lc-fbg">
+                            <buttonCell key="cell" type="push" title="确定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="m6W-Lc-fbg">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -1035,7 +1034,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="391" height="345"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hbo-CG-ce4">
-                            <rect key="frame" x="100" y="261" width="192" height="17"/>
+                            <rect key="frame" x="99" y="261" width="192" height="17"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="17" id="12v-Fk-pZw"/>
                                 <constraint firstAttribute="width" constant="188" id="Vm8-eT-S7D"/>
@@ -1047,7 +1046,7 @@
                             </textFieldCell>
                         </textField>
                         <button translatesAutoresizingMaskIntoConstraints="NO" id="YU7-op-k5t">
-                            <rect key="frame" x="149" y="126" width="94" height="94"/>
+                            <rect key="frame" x="148" y="126" width="94" height="94"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="94" id="mMz-bn-aY0"/>
                                 <constraint firstAttribute="height" constant="94" id="yob-Cy-KcX"/>
@@ -1069,7 +1068,7 @@
                     </constraints>
                 </customView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="g1F-Cy-Jdg" userLabel="Right">
-                    <rect key="frame" x="390" y="0.0" width="391" height="345"/>
+                    <rect key="frame" x="391" y="0.0" width="390" height="345"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eFB-G2-9Yt">
                             <rect key="frame" x="99" y="261" width="192" height="17"/>
